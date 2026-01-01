@@ -55,6 +55,15 @@
             class="h-20 w-auto"
           />
         </a>
+        <!-- Hamburger Button (visible on mobile) -->
+        <button
+          id="nav-toggle"
+          class="md:hidden text-navy focus:outline-none text-2xl"
+          aria-label="Open Menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- Desktop Nav -->
         <div
           class="hidden md:flex space-x-10 text-xs font-medium uppercase tracking-widest text-slate-500"
         >
@@ -65,14 +74,37 @@
           <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
+      <!-- Mobile Nav (hidden by default) -->
+      <div
+        id="mobile-nav"
+        class="md:hidden hidden bg-white/95 border-t border-slate-100 px-6 py-4 space-y-4 text-xs font-medium uppercase tracking-widest text-slate-500"
+      >
+        <a href="#about" class="block nav-link">About</a>
+        <a href="#programs" class="block nav-link">Programs</a>
+        <a href="#leadership" class="block nav-link">Leadership</a>
+        <a href="#partners" class="block nav-link">Partners</a>
+        <a href="#contact" class="block nav-link">Contact</a>
+      </div>
     </nav>
+    <script>
+      // Simple nav toggle for mobile
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileNav = document.getElementById("mobile-nav");
+      navToggle.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
 
     <!-- Simple Hero -->
     <section
-      <!-- class="min-h-screen flex items-center bg-slate-50 border-b border-slate-100" -->
-      
-      <section class="min-h-screen flex items-center bg-slate-50 border-b border-slate-100 pt-24"></section>
+      <!--
+      class="min-h-screen flex items-center bg-slate-50 border-b border-slate-100"
+      --
     >
+      <section
+        class="min-h-screen flex items-center bg-slate-50 border-b border-slate-100 pt-24"
+      ></section>
+
       <div class="container mx-auto px-6">
         <div class="max-w-3xl">
           <span
@@ -464,14 +496,22 @@
             >
               <p class="text-[10px] font-bold text-navy uppercase">
                 Optimus Bank
-                <img src="assets/opt.png" alt="Optimus Bank Logo" class="h-6 w-auto inline-block" />
+                <img
+                  src="assets/opt.png"
+                  alt="Optimus Bank Logo"
+                  class="h-6 w-auto inline-block"
+                />
               </p>
             </div>
             <div
               class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
             >
               <p class="text-[10px] font-bold text-navy uppercase">
-                <img src="assets/daura.png" alt="Daura Logo" class="h-6 w-auto inline-block" />
+                <img
+                  src="assets/daura.png"
+                  alt="Daura Logo"
+                  class="h-6 w-auto inline-block"
+                />
                 Univ. of Daura
               </p>
             </div>
@@ -479,29 +519,49 @@
               class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
             >
               <p class="text-[10px] font-bold text-navy uppercase">
-                <img src="assets/NCDMB.jfif" alt="NCDMB Logo" class="h-8 w-auto inline-block" />
-                NCDMB</p>
-            </div>
-            <div
-              class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
-            >
-              <p class="text-[10px] font-bold text-navy uppercase"> 
-                <img src="assets/NMDPRA.jfif" alt="NMDPRA Logo" class="h-8 w-auto inline-block" />
-                NMDPRA</p>
-            </div>
-            <div
-              class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
-            >
-              <p class="text-[10px] font-bold text-navy uppercase">
-                <img src="assets/CIOTA.jfif" alt="CIOTA Logo" class="h-8 w-auto inline-block" />
-                CIOTA</p>
+                <img
+                  src="assets/NCDMB.jfif"
+                  alt="NCDMB Logo"
+                  class="h-8 w-auto inline-block"
+                />
+                NCDMB
+              </p>
             </div>
             <div
               class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
             >
               <p class="text-[10px] font-bold text-navy uppercase">
-                <img src="assets/NITT.png" alt="NITT Logo" class="h-8 w-auto inline-block" />
-                NITT</p>
+                <img
+                  src="assets/NMDPRA.jfif"
+                  alt="NMDPRA Logo"
+                  class="h-8 w-auto inline-block"
+                />
+                NMDPRA
+              </p>
+            </div>
+            <div
+              class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
+            >
+              <p class="text-[10px] font-bold text-navy uppercase">
+                <img
+                  src="assets/CIOTA.jfif"
+                  alt="CIOTA Logo"
+                  class="h-8 w-auto inline-block"
+                />
+                CIOTA
+              </p>
+            </div>
+            <div
+              class="p-6 border border-slate-200 rounded hover:border-gold transition-colors"
+            >
+              <p class="text-[10px] font-bold text-navy uppercase">
+                <img
+                  src="assets/NITT.png"
+                  alt="NITT Logo"
+                  class="h-8 w-auto inline-block"
+                />
+                NITT
+              </p>
             </div>
           </div>
         </div>
@@ -516,10 +576,43 @@
             <h2 class="text-4xl font-bold mb-8">Get in Touch</h2>
             <div class="space-y-4 text-slate-400">
               <p class="text-lg">reliantfoundation2@gmail.com</p>
+              <div
+                class="bg-slate-800/40 rounded px-4 py-2 space-y-1 text-left"
+              >
+                <p class="text-xs font-semibold text-gold uppercase mb-1">
+                  Departmental Contacts
+                </p>
+                <p>
+                  <span class="font-semibold text-gold">Admin:</span>
+                  <a
+                    href="mailto:admin@reliantfoundation.com"
+                    class="hover:text-gold"
+                    >admin@reliantfoundation.com</a
+                  >
+                </p>
+                <p>
+                  <span class="font-semibold text-gold">Programs:</span>
+                  <a
+                    href="mailto:program@reliantfoundation.com"
+                    class="hover:text-gold"
+                    >program@reliantfoundation.com</a
+                  >
+                </p>
+                <p>
+                  <span class="font-semibold text-gold">Finance:</span>
+                  <a
+                    href="mailto:Finance@reliantfoundation.com"
+                    class="hover:text-gold"
+                    >Finance@reliantfoundation.com</a
+                  >
+                </p>
+              </div>
               <p class="text-lg">+234 703 589 9928</p>
-              <p class="text-sm">
-                No. 5, Opposite New Township Stadium, Zaria, Kaduna State
-              </p>
+              <address class="not-italic text-sm">
+                155a, Isale Eko Avenue<br />
+                Dolphin Estate, Ikoyi<br />
+                Lagos, Nigeria.
+              </address>
             </div>
           </div>
           <div class="text-right">
